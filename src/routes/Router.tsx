@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
+
 import { createBrowserRouter } from 'react-router-dom';
 
-import PageLoading from 'pages/PageLoading/PageLoading';
 import Page from 'pages/Page/Page';
-
+import PageLoading from 'pages/PageLoading/PageLoading';
 import paths from 'routes/paths';
 
 const Home = lazy(async () => await import('pages/Home/Home'));
