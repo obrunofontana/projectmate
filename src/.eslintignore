@@ -5,3 +5,4 @@ coverage
 *.scss
 /dist
 *.js
+vite.config.ts

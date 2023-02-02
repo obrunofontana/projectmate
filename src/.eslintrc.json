@@ -1,13 +1,14 @@
 {
   "env": {
-      "browser": true,
-      "es2021": true
+    "browser": true,
+    "es2021": true
   },
   "extends": [
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -16,20 +17,23 @@
       "jsx": true
     },
     "ecmaVersion": 13,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "plugins": [
-      "react",
-      "react-hooks",
-      "@typescript-eslint",
-      "prettier"
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
     "jsx-a11y/media-has-caption": "off",
+    "react/no-find-dom-node": "off",
+    "react-dom/client/no-default-export": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/comma-spacing": "off",  
+    "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-namespace": "off",
     "no-redeclare": "off",
@@ -38,7 +42,7 @@
     "import/export": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "@typescript-eslint/camelcase":"off",
+    "@typescript-eslint/camelcase": "off",
     "react/prop-types": "off",
     "@typescript-eslint/method-signature-style": "off",
     "react/jsx-filename-extension": "off",
@@ -52,36 +56,42 @@
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/function-component-definition": [
-        2,
-        {
-            "namedComponents": "arrow-function",
-            "unnamedComponents": "arrow-function"
-        }
-      ],
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "react/jsx-no-constructed-context-values": "off",
     "import/order": [
-        "error",
-        {
-          "groups": ["builtin", "external", "internal"],
-          "pathGroups": [
-            {
-              "pattern": "react",
-              "group": "external",
-              "position": "before"
-            }
-          ],
-          "pathGroupsExcludedImportTypes": ["react"],
-          "newlines-between": "always",
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
           }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
         }
-      ]
+      }
+    ]
   },
   "settings": {
-      "import/resolver": {
-        "typescript": {}
-      }
+    "import/resolver": {
+      "typescript": {}
     }
+  }
 }

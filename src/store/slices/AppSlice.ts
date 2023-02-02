@@ -6,8 +6,8 @@ export enum Theme {
 }
 
 export enum Language {
-  EN = 'en',
   BR = 'br',
+  EN = 'en',
 }
 
 export interface AppState {
@@ -17,7 +17,7 @@ export interface AppState {
 
 const INITIAL_STATE: AppState = {
   theme: Theme.Light,
-  language: Language.EN,
+  language: Language.BR,
 };
 
 const appSlice = createSlice({
