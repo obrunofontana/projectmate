@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import i18n from 'shared/language/i18n';
-import { RootState } from 'store';
+import { RootState } from 'store/rootReducer';
 import { Language, setLanguage } from 'store/slices/AppSlice';
 
 export const useLanguage = () => {

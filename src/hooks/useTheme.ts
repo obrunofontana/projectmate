@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState } from 'store';
+import { RootState } from 'store/rootReducer';
 import { setTheme, Theme } from 'store/slices/AppSlice';
 
 export const useTheme = () => {
