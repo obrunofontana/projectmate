@@ -10,17 +10,26 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
+    "@mui/lab": "^5.0.0-alpha.118",
+    "@mui/material": "^5.11.7",
     "@reduxjs/toolkit": "^1.9.1",
     "@types/redux-logger": "^3.0.9",
     "i18next": "^22.4.9",
     "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.0",
     "react-i18next": "^12.1.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
+    "react-toastify": "^9.1.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
