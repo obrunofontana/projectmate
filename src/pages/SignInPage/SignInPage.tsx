@@ -148,8 +148,8 @@ const SignInPage: React.FC = () => {
               borderRadius: 2,
             }}
           >
-            <FormInput name="email" label="Email Address" type="email" />
-            <FormInput name="password" label="Password" type="password" />
+            <FormInput name="email" label="E-mail" type="email" />
+            <FormInput name="password" label="Senha" type="password" />
 
             <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
               Precisa de uma conta? <LinkItem to="/register">Inscreva-se aqui</LinkItem>
