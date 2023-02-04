@@ -87,67 +87,75 @@ const SignInPage: React.FC = () => {
 
   return (
     <Container
-      maxWidth={false}
       sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#2363eb',
+        backgroundImage: 'url(./bg-crud.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100%',
+        display: 'grid',
+        gridTemplateRows: '20% 10% 1fr',
       }}
     >
-      <Box
+      <Typography
+        component="h1"
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
+          fontSize: { xs: '4rem', md: '5rem' },
+          fontWeight: 600,
+          mb: 2,
+          letterSpacing: 1,
+          marginTop: 2,
         }}
       >
-        <Typography
-          textAlign="center"
-          component="h1"
+        ProjectMate
+      </Typography>
+
+      <Typography
+        component="h2"
+        sx={{
+          mb: 2,
+          letterSpacing: 1,
+        }}
+      >
+        Simplifique a gestão de seus projetos
+      </Typography>
+
+      <FormProvider {...methods}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmitHandler)}
+          noValidate
+          autoComplete="off"
+          width="100%"
           sx={{
-            color: '#07847E',
-            fontWeight: 600,
-            fontSize: { xs: '2rem', md: '3rem' },
-            mb: 2,
-            letterSpacing: 1,
+            borderRadius: 2,
           }}
         >
-          Bem vindo de volta!
-        </Typography>
-        <Typography variant="body1" component="h2" sx={{ color: '#e5e7eb', mb: 2 }}>
-          Faça login para ter acesso!
-        </Typography>
+          <Typography>Bem vindo de volta!</Typography>
+          <FormInput name="email" placeholder="E-mail" type="email" />
+          <FormInput name="password" placeholder="Senha" type="password" />
+          <Button
+            disableElevation
+            type="submit"
+            variant="contained"
+            sx={{ height: '6rem', borderRadius: '1rem', marginTop: '0.8rem' }}
+            fullWidth
+          >
+            Entrar
+          </Button>
 
-        <FormProvider {...methods}>
-          <Box
-            component="form"
-            onSubmit={handleSubmit(onSubmitHandler)}
-            noValidate
-            autoComplete="off"
-            maxWidth="27rem"
-            width="100%"
+          <Typography
             sx={{
-              backgroundColor: '#e5e7eb',
-              p: { xs: '1rem', sm: '2rem' },
-              borderRadius: 2,
+              fontSize: '1.4rem',
+              mb: '1rem',
+              mt: '3.2rem',
+              textAlign: 'end',
+              paddingRight: '1rem',
             }}
           >
-            <FormInput name="email" label="E-mail" type="email" />
-            <FormInput name="password" label="Senha" type="password" />
-
-            <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
-              Precisa de uma conta? <LinkItem to="/register">Inscreva-se aqui</LinkItem>
-            </Typography>
-
-            <Button fullWidth sx={{ mt: 1 }} disableElevation type="submit" variant="contained">
-              Entrar
-            </Button>
-          </Box>
-        </FormProvider>
-      </Box>
+            Não possui uma conta? <LinkItem to="/register">Inscreva-se agora!</LinkItem>
+          </Typography>
+        </Box>
+      </FormProvider>
     </Container>
   );
 };

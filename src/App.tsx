@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import { PaletteMode, CssBaseline } from '@mui/material';
+import { PaletteMode, CssBaseline, GlobalStyles } from '@mui/material';
 import { createTheme, ThemeProvider, ThemeOptions } from '@mui/material/styles';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useTheme } from 'hooks';
 import Router from 'routes/Router';
+import { globalStyles } from 'styles/GlobalStyles';
 
 import 'shared/language/i18n';
 
@@ -80,6 +81,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles styles={globalStyles} />
       <CssBaseline />
       <ToastContainer />
       <RouterProvider router={Router} />

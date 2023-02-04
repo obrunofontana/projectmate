@@ -11,16 +11,17 @@ import { styled } from '@mui/material/styles';
 import { Controller, FieldErrors, FieldValues, useFormContext } from 'react-hook-form';
 
 const Input = styled(_Input)`
-  background-color: white;
+  background-color: #EAF0F7
   padding: 0.4rem 0.7rem;
 `;
 
 type FormInputProps = {
   name: string;
-  label: string;
+  label?: string;
+  placeholder?: string;
 } & InputProps;
 
-const FormInput: React.FC<FormInputProps> = ({ name, label, ...props }) => {
+const FormInput: React.FC<FormInputProps> = ({ name, label, placeholder, ...props }) => {
   const {
     control,
     formState: { errors },
@@ -43,7 +44,13 @@ const FormInput: React.FC<FormInputProps> = ({ name, label, ...props }) => {
       name={name}
       render={({ field }) => (
         <FormControl fullWidth sx={{ mb: 2 }}>
-          <Typography variant="body2" sx={{ color: '#633BBC', mb: 1, fontWeight: 500 }}>
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: 500,
+            }}
+          >
             {label}
           </Typography>
 
@@ -51,11 +58,20 @@ const FormInput: React.FC<FormInputProps> = ({ name, label, ...props }) => {
             {...field}
             fullWidth
             disableUnderline
-            sx={{ borderRadius: '1rem' }}
+            placeholder={placeholder}
+            sx={{
+              borderRadius: '1rem',
+              height: '6rem',
+              backgroundColor: '#EAF0F7',
+              color: '#667085',
+              padding: 1,
+            }}
             error={!!errors[name]}
             {...props}
           />
-          <FormHelperText error={!!errors[name]}>{formatErrorMessage(errors)}</FormHelperText>
+          <FormHelperText sx={{ marginLeft: 0 }} error={!!errors[name]}>
+            {formatErrorMessage(errors)}
+          </FormHelperText>
         </FormControl>
       )}
     />
