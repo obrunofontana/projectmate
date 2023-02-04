@@ -13,7 +13,7 @@ import { useLoginUserMutation } from 'store/api/authApi';
 
 const LinkItem = styled(Link)`
   text-decoration: none;
-  color: #633bbc;
+  color: #4461f2;
   &:hover {
     text-decoration: underline;
   }
