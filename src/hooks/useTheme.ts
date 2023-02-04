@@ -3,19 +3,18 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from 'store/rootReducer';
-import { setTheme, Theme } from 'store/slices/AppSlice';
+import { setTheme } from 'store/slices/AppSlice';
 
 export const useTheme = () => {
   const dispatch = useDispatch();
 
-  const { theme } = useSelector((state: RootState) => state.app);
+  const { darkMode } = useSelector((state: RootState) => state.app);
 
-  const setCurrentTheme = useCallback(
-    (themeParam: Theme) => {
-      dispatch(setTheme(themeParam));
-    },
-    [dispatch],
-  );
+  const toggleTheme = useCallback(() => {
+    const isDarkMode = !!JSON.parse(localStorage.getItem('darkMode') || 'false');
+    localStorage.setItem('darkMode', JSON.stringify(!isDarkMode));
+    dispatch(setTheme(!darkMode));
+  }, [dispatch, darkMode]);
 
-  return { theme, setCurrentTheme };
+  return { darkMode, toggleTheme };
 };

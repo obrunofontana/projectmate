@@ -53,7 +53,6 @@ export default createBrowserRouter(
           <Route path={paths.NOT_FOUND} element={getRouteElement(PageNotFound)} />
         </Route>
       </Route>
-
       {/* Public Routes */}
       <Route
         path={paths.REGISTER}
@@ -76,7 +75,7 @@ export default createBrowserRouter(
         errorElement={<PageUnexpected />}
         element={getRouteElement(SignInPage)}
       />
-      <Route path={paths.NOT_FOUND} element={getRouteElement(PageNotFound)} />
+      <Route path={paths.NOT_FOUND} element={getRouteElement(PageNotFound)} />,
     </>,
   ),
 );

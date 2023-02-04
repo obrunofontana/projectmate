@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoadingButton as _LoadingButton } from '@mui/lab';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -11,18 +10,6 @@ import { object, string, TypeOf } from 'zod';
 
 import FormInput from 'components/FormInput/FormInput';
 import { useLoginUserMutation } from 'store/api/authApi';
-
-const LoadingButton = styled(_LoadingButton)`
-  padding: 0.6rem 0;
-  background-color: #07847e;
-  color: #633bbc;
-  font-weight: 500;
-
-  &:hover {
-    background-color: #07847e;
-    transform: translateY(-2px);
-  }
-`;
 
 const LinkItem = styled(Link)`
   text-decoration: none;
@@ -155,16 +142,9 @@ const SignInPage: React.FC = () => {
               Precisa de uma conta? <LinkItem to="/register">Inscreva-se aqui</LinkItem>
             </Typography>
 
-            <LoadingButton
-              variant="contained"
-              sx={{ mt: 1 }}
-              fullWidth
-              disableElevation
-              type="submit"
-              loading={isLoading}
-            >
+            <Button fullWidth sx={{ mt: 1 }} disableElevation type="submit" variant="contained">
               Entrar
-            </LoadingButton>
+            </Button>
           </Box>
         </FormProvider>
       </Box>
