@@ -4,6 +4,7 @@ import { PaletteMode, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider, ThemeOptions } from '@mui/material/styles';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useTheme } from 'hooks';
@@ -11,7 +12,22 @@ import Router from 'routes/Router';
 
 import 'shared/language/i18n';
 
+const typography = {
+  htmlFontSize: 10,
+  fontFamily: ['Ubuntu', 'Roboto', '-apple-system'].join(','),
+};
+
 const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
+  typography,
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        @font-face {
+          font-family: 'Ubuntu';
+        }
+      `,
+    },
+  },
   palette: {
     mode,
     ...(mode === 'light'
