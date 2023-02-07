@@ -14,7 +14,7 @@ const AdminPage = () => {
         }}
       >
         <Typography variant="h2" component="h1" sx={{ color: '#1f1e1e', fontWeight: 500 }}>
-          Admin Page
+          Painel do administrador
         </Typography>
       </Box>
     </Container>

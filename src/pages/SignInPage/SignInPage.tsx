@@ -45,7 +45,7 @@ const SignInPage: React.FC = () => {
 
   const [loginUser, { isLoading, isError, error, isSuccess }] = useLoginUserMutation();
 
-  const from = ((location.state as any)?.from.pathname as string) || '/profile';
+  const from = ((location.state as any)?.from.pathname as string) || '/';
 
   useEffect(() => {
     if (isSuccess) {
