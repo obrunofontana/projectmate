@@ -93,69 +93,80 @@ const SignInPage: React.FC = () => {
         backgroundPosition: 'center',
         height: '100%',
         display: 'grid',
-        gridTemplateRows: '20% 10% 1fr',
+        gridTemplateRows: '20% 1fr',
       }}
     >
-      <Typography
-        component="h1"
-        sx={{
-          fontSize: { xs: '4rem', md: '5rem' },
-          fontWeight: 600,
-          mb: 2,
-          letterSpacing: 1,
-          marginTop: 2,
-        }}
-      >
-        ProjectMate
-      </Typography>
-
-      <Typography
-        component="h2"
-        sx={{
-          mb: 2,
-          letterSpacing: 1,
-        }}
-      >
-        Simplifique a gestão de seus projetos
-      </Typography>
-
-      <FormProvider {...methods}>
-        <Box
-          component="form"
-          onSubmit={handleSubmit(onSubmitHandler)}
-          noValidate
-          autoComplete="off"
-          width="100%"
-          sx={{
-            borderRadius: 2,
-          }}
-        >
-          <Typography>Bem vindo de volta!</Typography>
-          <FormInput name="email" placeholder="E-mail" type="email" />
-          <FormInput name="password" placeholder="Senha" type="password" />
-          <Button
-            disableElevation
-            type="submit"
-            variant="contained"
-            sx={{ height: '6rem', borderRadius: '1rem', marginTop: '0.8rem' }}
-            fullWidth
-          >
-            Entrar
-          </Button>
-
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr' }}>
+        <Box>
           <Typography
+            component="h1"
             sx={{
-              fontSize: '1.4rem',
-              mb: '1rem',
-              mt: '3.2rem',
-              textAlign: 'end',
-              paddingRight: '1rem',
+              fontSize: { xs: '4rem', md: '5rem' },
+              fontWeight: 600,
+              mb: 2,
+              letterSpacing: 1,
+              marginTop: 2,
             }}
           >
-            Não possui uma conta? <LinkItem to="/register">Inscreva-se agora!</LinkItem>
+            ProjectMate
+          </Typography>
+
+          <Typography
+            component="h2"
+            sx={{
+              mb: 2,
+              letterSpacing: 1,
+            }}
+          >
+            Simplifique a gestão de seus projetos
           </Typography>
         </Box>
-      </FormProvider>
+      </Box>
+
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box>
+          <img src="./home-illustration.svg" alt="" width="100%" />
+        </Box>
+
+        <FormProvider {...methods}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit(onSubmitHandler)}
+            noValidate
+            autoComplete="off"
+            width="60%"
+            sx={{
+              borderRadius: 2,
+              marginLeft: '8rem',
+            }}
+          >
+            <Typography>Bem vindo de volta!</Typography>
+            <FormInput name="email" placeholder="E-mail" type="email" />
+            <FormInput name="password" placeholder="Senha" type="password" />
+            <Button
+              disableElevation
+              type="submit"
+              variant="contained"
+              sx={{ height: '6rem', borderRadius: '1rem', marginTop: '0.8rem' }}
+              fullWidth
+            >
+              Entrar
+            </Button>
+
+            <Typography
+              sx={{
+                fontSize: '1.4rem',
+                mb: '1rem',
+                mt: '3.2rem',
+                textAlign: 'end',
+                paddingRight: '1rem',
+              }}
+            >
+              Não possui uma conta? <LinkItem to="/register">Inscreva-se agora!</LinkItem>
+            </Typography>
+          </Box>
+        </FormProvider>
+      </Box>
     </Container>
   );
 };

@@ -101,7 +101,7 @@ const Navbar = () => {
             <Box sx={{ ml: 4 }}>
               <Tooltip title="Meu perfil" onClick={() => navigate('/profile')}>
                 <IconButton sx={{ p: 0 }}>
-                  <Avatar alt={user?.name} src="https://randomuser.me/portraits/men/99.jpg" />
+                  <Avatar alt={user?.name} src="https://randomuser.me/portraits/men/70.jpg" />
                 </IconButton>
               </Tooltip>
             </Box>
