@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   AccountBox as AccountBoxIcon,
@@ -13,8 +13,8 @@ import { useAppSelector } from 'store';
 import { useLogoutUserMutation } from 'store/api/authApi';
 
 const AvatarMenu: React.FC = () => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const user = useAppSelector((state) => state.userState.user);
 
