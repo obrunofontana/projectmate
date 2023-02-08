@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Container, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -33,6 +33,7 @@ export type LoginInput = TypeOf<typeof loginSchema>;
 const SignInPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
 
   const methods = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
@@ -102,14 +103,17 @@ const SignInPage: React.FC = () => {
           <Typography
             component="h1"
             sx={{
-              fontSize: { xs: '4rem', md: '5rem' },
+              fontSize: { xs: '5rem', md: '6rem' },
               fontWeight: 600,
               mb: 2,
               letterSpacing: 1,
               marginTop: 2,
+              display: 'flex',
+              color: theme.palette.text.secondary,
             }}
           >
-            ProjectMate
+            Project
+            <span style={{ color: theme.palette.primary.main }}>Mate</span>
           </Typography>
 
           <Typography

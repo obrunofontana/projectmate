@@ -15,7 +15,7 @@ import 'shared/language/i18n';
 
 const typography = {
   htmlFontSize: 10,
-  fontFamily: ['Ubuntu', 'Roboto', '-apple-system'].join(','),
+  fontFamily: ['Roboto', '-apple-system'].join(','),
 };
 
 const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
@@ -24,7 +24,7 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
-          font-family: 'Ubuntu';
+          font-family: 'Roboto';
         }
       `,
     },
@@ -35,31 +35,31 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       ? {
           // Light Theme
           primary: {
-            main: '#4461F2',
+            main: '#EB622F',
           },
           divider: '#fde68a',
           background: {
-            default: '#F6F6F6',
-            paper: '#F6F6F6',
+            default: '#F7F5F4',
+            paper: '#F7F5F4',
           },
           text: {
-            primary: '#000',
-            secondary: '#27272a',
+            primary: '#656565',
+            secondary: '#505050',
           },
         }
       : {
           // Dark Theme
           primary: {
-            main: '#4461F2',
+            main: '#EB622F',
           },
           divider: '#004282',
           background: {
-            default: '#14162E',
-            paper: '#14162E',
+            default: '#1B1B1B',
+            paper: '#1B1B1B',
           },
           text: {
-            primary: '#fff',
-            secondary: '#71717a',
+            primary: '#BBBBBB',
+            secondary: '#C6C6C6',
           },
         }),
   },

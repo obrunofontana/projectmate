@@ -40,8 +40,8 @@ const SwitchTheme: React.FC<SwitchThemeProps> = ({ sx }) => {
             alt="Moon"
           />
         }
-        onColor="#F6F6F6"
-        offColor="#14162E"
+        onColor="#EB622F"
+        offColor="#505050"
       />
     </Box>
   );
