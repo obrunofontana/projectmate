@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { object, string, TypeOf } from 'zod';
 
 import FormInput from 'components/FormInput/FormInput';
+import SwitchTheme from 'components/SwitchTheme/SwitchTheme';
 import { useLoginUserMutation } from 'store/api/authApi';
 
 const LinkItem = styled(Link)`
@@ -96,7 +97,7 @@ const SignInPage: React.FC = () => {
         gridTemplateRows: '20% 1fr',
       }}
     >
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr max-content' }}>
         <Box>
           <Typography
             component="h1"
@@ -121,6 +122,7 @@ const SignInPage: React.FC = () => {
             Simplifique a gestão de seus projetos
           </Typography>
         </Box>
+        <SwitchTheme sx={{ marginTop: '4rem' }} />
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
