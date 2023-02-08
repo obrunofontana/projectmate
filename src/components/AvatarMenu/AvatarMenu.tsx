@@ -65,8 +65,8 @@ const AvatarMenu: React.FC = () => {
 
   return (
     <>
-      <IconButton onClick={handleClick}>
-        <Avatar src="https://randomuser.me/portraits/men/71.jpg" />
+      <IconButton sx={{ marginRight: '1rem' }} onClick={handleClick}>
+        <Avatar sx={{ marginRight: '1rem' }} src="https://randomuser.me/portraits/men/71.jpg" />
         <strong>{user?.name}</strong>
       </IconButton>
 
