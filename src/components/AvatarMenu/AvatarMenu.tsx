@@ -5,7 +5,7 @@ import {
   Logout as LogoutIcon,
   AdminPanelSettings as AdminPanelSettingsIcon,
 } from '@mui/icons-material';
-import { Menu, MenuItem, IconButton, Avatar, ListItemIcon, ListItemText } from '@mui/material';
+import { Menu, MenuItem, Avatar, ListItemIcon, ListItemText, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -65,10 +65,14 @@ const AvatarMenu: React.FC = () => {
 
   return (
     <>
-      <IconButton sx={{ marginRight: '1rem' }} onClick={handleClick}>
+      <Button
+        variant="text"
+        sx={{ marginRight: '1rem', color: (theme) => theme.palette.text.primary }}
+        onClick={handleClick}
+      >
         <Avatar sx={{ marginRight: '1rem' }} src="https://randomuser.me/portraits/men/71.jpg" />
         <strong>{user?.name}</strong>
-      </IconButton>
+      </Button>
 
       <Menu anchorEl={anchorEl} open={open}>
         <MenuItem onClick={onViewProfileHandler}>
