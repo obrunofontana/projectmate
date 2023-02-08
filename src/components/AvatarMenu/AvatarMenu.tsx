@@ -63,10 +63,17 @@ const AvatarMenu: React.FC = () => {
     setAnchorEl(null);
   };
 
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <Button
         variant="text"
+        aria-controls={open ? 'avatar-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
         sx={{ marginRight: '1rem', color: (theme) => theme.palette.text.primary }}
         onClick={handleClick}
       >
@@ -74,7 +81,13 @@ const AvatarMenu: React.FC = () => {
         <strong>{user?.name}</strong>
       </Button>
 
-      <Menu anchorEl={anchorEl} open={open}>
+      <Menu
+        id="avatar-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+      >
         <MenuItem onClick={onViewProfileHandler}>
           <ListItemIcon>
             <AccountBoxIcon fontSize="small" />
