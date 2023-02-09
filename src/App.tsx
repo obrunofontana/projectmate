@@ -55,6 +55,12 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
           scrollThumbHover: {
             main: '#BBBBBB',
           },
+          componentsBackground: {
+            main: '#FFF',
+          },
+          border: {
+            main: '#D8D8D8',
+          },
         }
       : {
           // Dark Theme
@@ -78,6 +84,12 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
           },
           scrollThumbHover: {
             main: '#636363',
+          },
+          componentsBackground: {
+            main: '#2E2E2E',
+          },
+          border: {
+            main: '#434343',
           },
         }),
   },

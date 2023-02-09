@@ -1,7 +1,7 @@
 import React from 'react';
 
 declare module '@mui/material/styles' {
-  interface ThemeOptions {
+  interface Theme {
     palette: {
       scrollBackground?: {
         main: string;
@@ -10,6 +10,12 @@ declare module '@mui/material/styles' {
         main: string;
       };
       scrollThumbHover?: {
+        main: string;
+      };
+      componentsBackground?: {
+        main: string;
+      };
+      border?: {
         main: string;
       };
     };
@@ -23,6 +29,12 @@ declare module '@mui/material/styles' {
       main: string;
     };
     scrollThumbHover?: {
+      main: string;
+    };
+    componentsBackground?: {
+      main: string;
+    };
+    border?: {
       main: string;
     };
   }

@@ -1,6 +1,7 @@
 import { Box, styled } from '@mui/material';
 
-export const CardContainer = styled(Box)(() => ({
+export const CardContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette?.componentsBackground?.main,
   width: '24rem',
   minWidth: '24rem',
   height: '14.6rem',
@@ -8,7 +9,7 @@ export const CardContainer = styled(Box)(() => ({
   marginRight: '1rem',
   padding: '1.2rem 1rem 0.7rem 1rem',
   borderRadius: '0.5rem',
-  border: '1px solid #D8D8D8',
+  border: `1px solid ${theme.palette?.border?.main}`,
   display: 'inline-block',
   flexDirection: 'column',
   justifyContent: 'space-between',

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ThemeOptions } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 
-export const globalStyles = (theme: ThemeOptions) => ({
+export const globalStyles = (theme: Theme) => ({
   html: {
     fontSize: '62.5%' /* 62.5% of 16px = 10px */,
   },
