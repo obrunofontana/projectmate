@@ -46,6 +46,15 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
             primary: '#656565',
             secondary: '#505050',
           },
+          scrollBackground: {
+            main: '#E7E7E7',
+          },
+          scrollThumb: {
+            main: '#D0D0D0',
+          },
+          scrollThumbHover: {
+            main: '#BBBBBB',
+          },
         }
       : {
           // Dark Theme
@@ -60,6 +69,15 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
           text: {
             primary: '#BBBBBB',
             secondary: '#C6C6C6',
+          },
+          scrollBackground: {
+            main: '#2E2E2E',
+          },
+          scrollThumb: {
+            main: '#505050',
+          },
+          scrollThumbHover: {
+            main: '#636363',
           },
         }),
   },
