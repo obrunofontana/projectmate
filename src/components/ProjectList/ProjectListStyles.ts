@@ -2,8 +2,7 @@ import { Box, styled, Divider } from '@mui/material';
 
 export const ProjectListContainer = styled(Box)(() => ({
   width: '100%',
-  height: '18rem',
-  marginBottom: '3rem',
+  height: '33.33%',
 }));
 
 export const ProjectListContainerContent = styled(Box)(() => ({

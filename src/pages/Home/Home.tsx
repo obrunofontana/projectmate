@@ -3,6 +3,8 @@ import { Fab } from '@mui/material';
 
 import ProjectList from 'components/ProjectList/ProjectList';
 
+import { HomeContainer } from './HomeStyles';
+
 const Home: React.FC = () => {
   const projectsViewRecently = ['Goiabão'];
   const myProjects = ['Avocado', 'Abacaxi'];
@@ -28,9 +30,12 @@ const Home: React.FC = () => {
       >
         <AddIcon />
       </Fab>
-      <ProjectList label="Visualizado recentemente" projects={projectsViewRecently} />
-      <ProjectList label="Meus projetos" projects={myProjects} />
-      <ProjectList label="Projeto públicos" projects={publicProjects} />
+
+      <HomeContainer>
+        <ProjectList label="Visualizado recentemente" projects={projectsViewRecently} />
+        <ProjectList label="Meus projetos" projects={myProjects} />
+        <ProjectList label="Projeto públicos" projects={publicProjects} />
+      </HomeContainer>
     </>
   );
 };
