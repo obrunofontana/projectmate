@@ -109,7 +109,7 @@ const RegisterPage: React.FC = () => {
           marginTop: 2,
         }}
       >
-        ProjectMate
+        InstantTodo
       </Typography>
 
       <Typography

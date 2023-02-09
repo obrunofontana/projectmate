@@ -112,8 +112,8 @@ const SignInPage: React.FC = () => {
               color: theme.palette.text.secondary,
             }}
           >
-            Project
-            <span style={{ color: theme.palette.primary.main }}>Mate</span>
+            Instant
+            <span style={{ color: theme.palette.primary.main }}>Do</span>
           </Typography>
 
           <Typography

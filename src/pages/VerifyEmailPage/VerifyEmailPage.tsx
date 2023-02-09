@@ -95,7 +95,7 @@ const VerifyEmailPage: React.FC = () => {
           marginTop: 2,
         }}
       >
-        ProjectMate
+        InstantTodo
       </Typography>
 
       <FormProvider {...methods}>

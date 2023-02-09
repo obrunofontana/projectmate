@@ -9,18 +9,16 @@ const Navbar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="lg">
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h6" onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
-            ProjectMate
-          </Typography>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Typography variant="h6" onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
+          InstantDo
+        </Typography>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <AvatarMenu />
-            <SwitchTheme />
-          </Box>
-        </Toolbar>
-      </Container>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <AvatarMenu />
+          <SwitchTheme />
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 };

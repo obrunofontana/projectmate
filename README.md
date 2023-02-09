@@ -1,4 +1,4 @@
-# ProjectMate
+# InstantDo
 
 É um projeto para desenvolvimento pessoal das minhas hard skills em React
 
