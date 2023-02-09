@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Container, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
+import { useCookies } from 'react-cookie';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -34,6 +35,8 @@ const SignInPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const theme = useTheme();
+  const [cookies] = useCookies(['logged_in']);
+  const loggedIn = cookies.logged_in;
 
   const methods = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
@@ -82,6 +85,13 @@ const SignInPage: React.FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loggedIn]);
 
   const onSubmitHandler: SubmitHandler<LoginInput> = (values) => {
     loginUser(values);
