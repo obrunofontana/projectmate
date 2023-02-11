@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import AddIcon from '@mui/icons-material/Add';
-import { Box, Button, Container, Fab } from '@mui/material';
+import { Box, Container, Fab } from '@mui/material';
 
 import { Modal, Input, TextAreaInput } from 'components';
 import ProjectList from 'components/ProjectList/ProjectList';
@@ -9,34 +9,30 @@ import ProjectList from 'components/ProjectList/ProjectList';
 import { HomeContainer } from './HomeStyles';
 
 const Home: React.FC = () => {
-  // feature: '#F47E52', bug: '#DB4B4B', deploy: '#61D856', infra: '#131FC2', refactor: '#7352CF',
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [projectTitle, setProjectTitle] = useState<string>('');
   const [projectDescription, setProjectDescription] = useState<string>('');
   const projectsViewRecently: any = [];
   const myProjects = [
     {
+      id: '9ee45dc3-7d64-4bb2-b173-b463b8ccaf17',
       title: 'Avocado',
       description: 'Projeto que irá tratar o desenvolvimento da vida de um avocado',
       color: '#61D856',
     },
     {
+      id: 'c42113b6-27e7-4285-a186-c71ef7b914ed',
       title: 'Abacaxi',
       color: '#7352CF',
     },
   ];
 
-  const publicProjects: any = [];
-  // const publicProjects = [
-  //   { title: 'Abacate', color: '#F47E52' },
-  //   { title: 'Banana', color: '#DB4B4B' },
-  //   { title: 'Goiaba', color: '#61D856' },
-  //   { title: 'Morango', color: '#131FC2' },
-  //   { title: 'Uva', color: '#7352CF' },
-  //   { title: 'Manga', color: '#61D856' },
-  //   { title: 'Laranja', color: '#DB4B4B' },
-  //   { title: 'Kiwi', color: '#7352CF' },
-  // ];
+  const publicProjects = [
+    { id: '9541734c-50ac-401e-bf87-459d76fa7961', title: 'Abacate', color: '#F47E52' },
+    { id: 'a35a63f6-4535-4a29-81c9-943a8d2fa97b', title: 'Banana', color: '#DB4B4B' },
+    { id: '3546695c-8c2c-40fd-af88-d7cbbccdd643', title: 'Goiaba', color: '#61D856' },
+    { id: 'd86e55f1-9e64-4b85-9841-665eef53b715', title: 'Morango', color: '#131FC2' },
+  ];
 
   const clearFields = () => {
     setProjectTitle('');
