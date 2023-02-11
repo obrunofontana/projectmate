@@ -9,21 +9,34 @@ import ProjectList from 'components/ProjectList/ProjectList';
 import { HomeContainer } from './HomeStyles';
 
 const Home: React.FC = () => {
+  // feature: '#F47E52', bug: '#DB4B4B', deploy: '#61D856', infra: '#131FC2', refactor: '#7352CF',
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [projectTitle, setProjectTitle] = useState<string>('');
   const [projectDescription, setProjectDescription] = useState<string>('');
-  const projectsViewRecently = ['Goiabão'];
-  const myProjects = ['Avocado', 'Abacaxi'];
-  const publicProjects = [
-    'Abacata',
-    'Banana',
-    'Goiaba',
-    'Morango',
-    'Uva',
-    'Manga',
-    'Laranja',
-    'Kiwi',
+  const projectsViewRecently: any = [];
+  const myProjects = [
+    {
+      title: 'Avocado',
+      description: 'Projeto que irá tratar o desenvolvimento da vida de um avocado',
+      color: '#61D856',
+    },
+    {
+      title: 'Abacaxi',
+      color: '#7352CF',
+    },
   ];
+
+  const publicProjects: any = [];
+  // const publicProjects = [
+  //   { title: 'Abacate', color: '#F47E52' },
+  //   { title: 'Banana', color: '#DB4B4B' },
+  //   { title: 'Goiaba', color: '#61D856' },
+  //   { title: 'Morango', color: '#131FC2' },
+  //   { title: 'Uva', color: '#7352CF' },
+  //   { title: 'Manga', color: '#61D856' },
+  //   { title: 'Laranja', color: '#DB4B4B' },
+  //   { title: 'Kiwi', color: '#7352CF' },
+  // ];
 
   const clearFields = () => {
     setProjectTitle('');
@@ -77,7 +90,10 @@ const Home: React.FC = () => {
       </Fab>
 
       <HomeContainer>
-        <ProjectList label="Visualizado recentemente" projects={projectsViewRecently} />
+        {projectsViewRecently.length > 0 && (
+          <ProjectList label="Visualizado recentemente" projects={projectsViewRecently} />
+        )}
+
         <ProjectList label="Meus projetos" projects={myProjects} />
         <ProjectList label="Projeto públicos" projects={publicProjects} />
       </HomeContainer>

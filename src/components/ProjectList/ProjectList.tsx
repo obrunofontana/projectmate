@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 
+import { Box } from '@mui/material';
+
 import Card from 'components/Card/Card';
 
 import { ProjectListContainer, ProjectListContainerContent } from './ProjectListStyles';
 
+type Project = {
+  title: string;
+  description?: string;
+  color: string;
+};
+
 type ProjectListProps = {
   label: string;
-  projects: string[];
+  projects: Project[];
 };
 
 const ProjectList: React.FC<ProjectListProps> = ({ label, projects }) => {
@@ -28,11 +36,18 @@ const ProjectList: React.FC<ProjectListProps> = ({ label, projects }) => {
     <ProjectListContainer>
       <label>{label}</label>
       <ProjectListContainerContent ref={projectContainerContentRef}>
-        {projects.map((project, index) => (
-          <Card key={index}>
-            <h3>{project}</h3>
-          </Card>
-        ))}
+        {projects.length ? (
+          projects.map((project, index) => (
+            <Card key={index} borderColor={project.color}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </Card>
+          ))
+        ) : (
+          <Box sx={{ marginTop: '2rem' }}>
+            <h5>Nenhum projeto encontrado.</h5>
+          </Box>
+        )}
       </ProjectListContainerContent>
     </ProjectListContainer>
   );
