@@ -3,6 +3,12 @@ import React from 'react';
 import { Theme } from '@mui/material/styles';
 
 export const globalStyles = (theme: Theme) => ({
+  '*': {
+    margin: '0',
+    padding: '0',
+    border: '0',
+    listStyle: 'none',
+  },
   html: {
     fontSize: '62.5%' /* 62.5% of 16px = 10px */,
   },
