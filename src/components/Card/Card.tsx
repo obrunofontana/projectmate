@@ -1,15 +1,17 @@
 import React, { ReactNode } from 'react';
 
+import { CardProps as MuiCardProps } from '@mui/material';
+
 import { CardBorder, CardContainer } from './CardStyles';
 
-type CardProps = {
+interface CardProps extends MuiCardProps {
   borderColor: string;
   children: ReactNode;
-};
+}
 
-const Card: React.FC<CardProps> = ({ children, borderColor }) => {
+const Card: React.FC<CardProps> = ({ children, borderColor, ...props }) => {
   return (
-    <CardContainer>
+    <CardContainer {...props}>
       <CardBorder color={borderColor} />
       {children}
     </CardContainer>
