@@ -29,7 +29,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ label, projects }) => {
       <label>{label}</label>
       <ProjectListContainerContent ref={projectContainerContentRef}>
         {projects.map((project, index) => (
-          <Card project={project} key={index} />
+          <Card key={index}>
+            <h3>{project}</h3>
+          </Card>
         ))}
       </ProjectListContainerContent>
     </ProjectListContainer>
