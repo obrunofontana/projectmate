@@ -15,3 +15,21 @@ export const CardContainer = styled(Card)(({ theme }) => ({
   position: 'relative',
   cursor: 'pointer',
 }));
+
+type CardBorderProps = {
+  color?: string;
+};
+
+export const CardBorder = styled(Card, {
+  shouldForwardProp: (props) => props !== 'color',
+})<CardBorderProps>(({ color }) => ({
+  cursor: 'grab',
+  position: 'absolute',
+  width: 'calc(100% + 2px)',
+  top: '-0.1rem',
+  left: '-0.1rem',
+  borderTopLeftRadius: '0.5rem',
+  borderTopRightRadius: '0.5rem',
+  height: '0.6rem',
+  backgroundColor: color ? `${color}` : '#dcdcdc',
+}));
