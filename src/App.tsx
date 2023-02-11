@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import { ApplicationContextContainer, ConfirmationModal } from 'components';
 import { useTheme } from 'hooks';
 import Router from 'routes/Router';
 import { globalStyles } from 'styles/GlobalStyles';
@@ -110,12 +111,15 @@ const App: React.FC = () => {
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles styles={globalStyles} />
-      <CssBaseline />
-      <ToastContainer />
-      <RouterProvider router={Router} />
-    </ThemeProvider>
+    <ApplicationContextContainer>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles styles={globalStyles} />
+        <CssBaseline />
+        <ConfirmationModal />
+        <ToastContainer />
+        <RouterProvider router={Router} />
+      </ThemeProvider>
+    </ApplicationContextContainer>
   );
 };
 
