@@ -52,9 +52,17 @@ const VerifyEmailPage: React.FC = () => {
           }),
         );
       } else {
-        const err = (error as any)?.data?.message
+        let err = (error as any)?.data?.message
           ? (error as any)?.data?.message
           : (error as any)?.error;
+
+        if (
+          typeof (error as any)?.error === 'string' &&
+          (error as any)?.error === 'TypeError: Failed to fetch'
+        ) {
+          err = 'Falha ao se comunicar com o servidor, tente novamente mais tarde';
+        }
+
         toast.error(err, {
           position: 'top-right',
         });
