@@ -20,6 +20,7 @@ const SignInPage = lazy(async () => await import('pages/SignInPage/SignInPage'))
 const VerifyEmailPage = lazy(async () => await import('pages/VerifyEmailPage/VerifyEmailPage'));
 const AdminPage = lazy(async () => await import('pages/AdminPage/AdminPage'));
 const ProfilePage = lazy(async () => await import('pages/ProfilePage/ProfilePage'));
+const Project = lazy(async () => await import('pages/Project/Project'));
 
 const getRouteElement = (Component: React.ElementType): React.ReactNode => (
   <Suspense fallback={<PageLoading />}>
@@ -47,6 +48,10 @@ export default createBrowserRouter(
 
           <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
             <Route path={paths.ADMIN} element={getRouteElement(AdminPage)} />
+          </Route>
+
+          <Route element={<ProtectedRoute allowedRoles={['admin', 'user']} />}>
+            <Route path={paths.PROJECT} element={getRouteElement(Project)} />
           </Route>
 
           <Route path={paths.UNAUTHORIZED} element={getRouteElement(PageUnauthorized)} />

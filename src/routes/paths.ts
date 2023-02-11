@@ -8,6 +8,7 @@ const paths: Paths = {
   VERIFY_EMAIL: '/verify-email',
   PROFILE: '/profile',
   ADMIN: '/admin',
+  PROJECT: '/project/:id',
   UNAUTHORIZED: '/unauthorized',
 };
 
