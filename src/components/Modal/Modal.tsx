@@ -64,7 +64,9 @@ const Modal: React.FC<Props> = ({
   return (
     <MuiDialog fullScreen={fullScreen} onClose={handleClose} open={open} {...props}>
       {title && <DialogTitle>{title}</DialogTitle>}
-      <DialogContent {...contentProps}>{children}</DialogContent>
+      <DialogContent sx={{ display: 'flex' }} {...contentProps}>
+        {children}
+      </DialogContent>
 
       <DialogActions>
         <Button onClick={handleCancel}>{cancelButtonLabel}</Button>
