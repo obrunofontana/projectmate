@@ -12,3 +12,4 @@ export type { ConfirmationModalProps } from './ConfirmationModal/ConfirmationMod
 export { default as ApplicationContextContainer } from './ApplicationContextContainer/ApplicationContextContainer';
 export { default as TextAreaInput } from './TextAreaInput/TextAreaInput';
 export { default as Input } from './Input/Input';
+export { default as KanbanBoard } from './KanbanBoard/KanbanBoard';

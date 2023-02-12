@@ -1,15 +1,12 @@
 import React from 'react';
 
-import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
+
+import { KanbanBoard } from 'components';
 
 const Project: React.FC = () => {
   const { id } = useParams();
-  return (
-    <Box>
-      <h1>Visualizando projeto com id: {id}</h1>
-    </Box>
-  );
+  return <KanbanBoard />;
 };
 
 export default Project;
